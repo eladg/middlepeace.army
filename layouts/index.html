@@ -1,0 +1,98 @@
+{{- define "main" }}
+
+<style>
+  body {
+    display: flex;
+    margin: 0;
+  }
+
+  .background {
+    position: fixed;
+    background-image: url("/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .blur { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); height: 100vh; width: 100%; }
+
+  .root {
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+  }
+
+  .logo {
+    border: 2px solid white;
+    border-radius: 5em;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgb(226 13 13 / 33%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+  }
+
+  .main {
+    width: 500px;
+  }
+
+  .item {
+    display: flex;
+    margin: 1em;
+    padding: 10px;
+    height: 60px;
+    background: lightyellow;
+    border-radius: 40px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+
+  .item span {
+    align-self: center;
+  }
+</style>
+
+<body>
+  <div class="background">
+    <div class="blur"></div>
+  </div>
+  <div class="root">
+    <div class="main">
+      <div class="header">
+        <div class="logo">
+          <span>Middle<br/>Peace</span>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="item" onclick="location.href='https://mixcloud.com/middlepeace';">
+          <span>Listen to my mixes</span>
+        </div>
+        <div class="item">
+          <span>About</span>
+        </div>
+        <div class="item">
+          <span>Email Me: <a href="mailto:middlepeace@gariany.com">middlepeace@gariany.com</a></span>
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+
+{{- end }}
